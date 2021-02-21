@@ -4,12 +4,12 @@
 # asks for type of operation to perform: add, sub, mult, or div
 # displays result
 
-# Below is my attempt before watching the video:
+# After watching video, changed .to_i to .to_F to allow for float division:
 
 puts "Please input first number:"           # asks for 1st number
-num1 = Kernel.gets().chomp().to_i           # receives input 1
+num1 = Kernel.gets().chomp().to_f           # receives input 1
 puts "Please input second number:"          # asks for 2nd number
-num2 = Kernel.gets().chomp().to_i           # receives input 2
+num2 = Kernel.gets().chomp().to_f           # receives input 2
 puts "Please choose operation to perform: add (+), subtract (-), multiply (*), or divide (/): "
 operation = Kernel.gets().chomp()
 
