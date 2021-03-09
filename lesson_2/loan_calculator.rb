@@ -1,10 +1,12 @@
 ### Assignment: Loan Calculator ###
 # =========
-# (the comments that follow are my own version of "pseudo-code". I think of it as somewhere between the "informal" and the "formal 
-# pseudo-code examples that Chris showed us in the lesson videos." Is this acceptable practice?
+# (the comments that follow are my own version of "pseudo-code".
+# I think of it as somewhere between the "informal" and the "formal
+# pseudo-code examples that Chris showed us in the lesson videos."
+# Is this acceptable practice?
 
 # ========
-# Data definitions: 
+# Data definitions:
 
 # input:
 #    loan amount  => Integer
@@ -24,7 +26,8 @@
 #    valid_apr?(apr) => checks if APR == float
 #    monthly_duration(duration) => converts from annual to monthly duration
 #    monthly_rate(rate) => converts from annual to monthly rate
-#    monthly_payment => calculates monthly payment using formula m = p * (j / (1 - (1 + j)**(-n)))
+#    monthly_payment => calculates monthly payment using formula
+#    m = p * (j / (1 - (1 + j)**(-n)))
 
 # ========
 require 'yaml'
@@ -47,7 +50,7 @@ def valid_amount?(amount)
 end
 
 def monthly_payment(amount, monthly_duration, monthly_rate)
-  payment = amount.to_f * (monthly_rate / (1 - (1 + monthly_rate) **( - monthly_duration)))
+  amount.to_f * (monthly_rate / (1 - (1 + monthly_rate)**(- monthly_duration)))
 end
 
 def monthly_interest_rate(apr)
@@ -55,24 +58,21 @@ def monthly_interest_rate(apr)
 end
 
 def animation(message)
-print(message)
-  6.times do 
+  print(message)
+  6.times do
     print(".")
     sleep(0.5)
-    end
+  end
   puts("")
-  
 end
 
 def bar_animation
- 35.times do 
+  35.times do
     print(".")
     sleep(0.05)
-    end
-   
-  puts("")
   end
-
+  puts("")
+end
 
 prompt(MSG['welcome'])
 bar_animation
@@ -87,49 +87,53 @@ loop do
     amount = gets.chomp
 
     if valid_amount?(amount)
-    break
+      break
     else
       prompt(MSG['amount_invalid'])
     end
   end
 
   apr = ""
-  loop do    
-  prompt(MSG['apr'])
-  apr = gets.chomp
+  loop do
+    prompt(MSG['apr'])
+    apr = gets.chomp
 
     if valid_amount?(apr)
       break
     else
-    prompt(MSG['apr_invalid'])
+      prompt(MSG['apr_invalid'])
     end
   end
 
   loan_duration = ""
   loop do
-  prompt(MSG['duration'])
-  loan_duration = gets.chomp
+    prompt(MSG['duration'])
+    loan_duration = gets.chomp
     if integer?(loan_duration)
       break
     else
-    prompt(MSG['duration_invalid'])
+      prompt(MSG['duration_invalid'])
     end
   end
 
   apr = apr.to_f / 100
-  
+
   loan_duration_months = loan_duration.to_i * 12
 
   animation("Calculating monthly rate...")
   sleep(0.3)
 
-  prompt("Your monthly rate will be %#{format('%.3f', monthly_interest_rate(apr))}")
+  prompt("Your monthly rate will be
+          %#{format('%.3f', monthly_interest_rate(apr))}")
   sleep(1)
   puts("")
   animation("Now calculating your monthly payment...")
   sleep(0.3)
 
-  prompt("Your monthly payment will consist of $#{format('%.2f', monthly_payment(amount, loan_duration_months, monthly_interest_rate(apr)))}")
+  prompt("Your monthly payment will consist of
+    $#{format('%.2f', monthly_payment(amount,
+                                      loan_duration_months,
+                                      monthly_interest_rate(apr)))}")
   sleep(1)
 
   bar_animation
