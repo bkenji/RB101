@@ -4,6 +4,7 @@
 # asks for type of operation to perform: add, sub, mult, or div
 # displays result
 
+# My attempt before watching video
 # After watching video, changed .to_i to .to_F to allow for float division:
 
 puts "Please input first number:"           # asks for 1st number
