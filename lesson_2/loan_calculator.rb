@@ -49,6 +49,11 @@ def valid_amount?(amount)
   integer?(amount) || float?(amount)
 end
 
+def positive_number?(amount)
+  amount.to_i > 0
+end
+
+
 def monthly_payment(amount, monthly_duration, monthly_rate)
   amount.to_f * (monthly_rate / (1 - (1 + monthly_rate)**(- monthly_duration)))
 end
@@ -86,7 +91,7 @@ loop do
     prompt(MSG['amount'])
     amount = gets.chomp
 
-    if valid_amount?(amount)
+    if valid_amount?(amount) && positive_number?(amount)
       break
     else
       prompt(MSG['amount_invalid'])
@@ -98,7 +103,7 @@ loop do
     prompt(MSG['apr'])
     apr = gets.chomp
 
-    if valid_amount?(apr)
+    if valid_amount?(apr) && positive_number?(apr)
       break
     else
       prompt(MSG['apr_invalid'])
@@ -109,7 +114,7 @@ loop do
   loop do
     prompt(MSG['duration'])
     loan_duration = gets.chomp
-    if integer?(loan_duration)
+    if integer?(loan_duration) && positive_number?(loan_duration)
       break
     else
       prompt(MSG['duration_invalid'])
