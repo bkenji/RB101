@@ -53,7 +53,6 @@ def positive_number?(amount)
   amount.to_i > 0
 end
 
-
 def monthly_payment(amount, monthly_duration, monthly_rate)
   amount.to_f * (monthly_rate / (1 - (1 + monthly_rate)**(- monthly_duration)))
 end
