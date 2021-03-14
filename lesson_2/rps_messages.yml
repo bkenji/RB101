@@ -1,0 +1,8 @@
+welcome: "Welcome to Rock, Paper, and Scissors!"
+win: "Congratulations! You won!"
+lose: "Oh, no... The Computer won!"
+tie: "It's a tie!"
+play_again?: "Would you like to play again?"
+invalid_answer: "This is not a valid reply. Please answer yes (y) or no (n)."
+invalid_choice: "That's not a valid choice."
+goodbye: "Thank you for playing. Goodbye!"
