@@ -1,0 +1,36 @@
+welcome_title: "Welcome to ROCK, PAPER, SCISSORS, LIZARD, and SPOCK!"
+name: "Please type in your name:"
+rules: |
+  - This is a variation of the classic game "Rock, Paper, Scissors".
+  - You take turns against the Computer, for a total of 5 rounds.
+  - You must choose among Rock, Paper, Scissors, Lizard, or Spock.
+  - The first player to reach 5 points is the winner.
+win: "Congratulations! You won!"
+choices: |
+    -  Rock (R)
+    -  Paper (P)
+    -  Scissors (S)
+    -  Lizard (L)
+    -  Spock (K)
+    (type the word or the shorthand)
+one_two_three: |
+    - One...
+    - Two...
+    - Three...
+    - GO!
+lose: "Oh, no... The Computer won!"
+tie: "It's a tie!"
+scissors_paper: "Scissors cuts paper!"
+paper_rock: "Paper covers rock!"
+rock_lizard: "Rock crushes lizard!"
+lizard_spock: "Lizard poisons Spock!"
+spock_scissors: "Spock smashes scissors!"
+scissors_lizard: "Scissors decapitates lizard!"
+lizard_paper: "Lizard eats paper!"
+paper_spock: "Paper disproves Spock!"
+spock_rock: "Spock vaporizes rock!"
+rock_scissors: "Rock crushes scissors!"
+play_again?: "Would you like to play again?"
+invalid_answer: "This is not a valid reply. Please answer yes (y) or no (n)."
+invalid_choice: "That's not a valid choice."
+goodbye: "Thank you for playing. Goodbye!"
