@@ -1,0 +1,7 @@
+who_plays_first: "Who should play first? Computer, User, or Random (computer decides)?"
+try_again: "Try again. Type 'Computer' (C), 'User' (U), or 'Random'(R)for the computer to decide for you."
+not_valid: "Sorry, that's not a valid choice."
+play_again: "Would you like to play again? (Y/N)"
+thanks: "Thanks for playing!"
+
+    
