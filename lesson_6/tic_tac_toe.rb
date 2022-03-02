@@ -274,4 +274,4 @@ loop do # main loop (outermost loop)
   break unless answer.start_with?("Y")
 end
 
-prompt(MSG["thanks"]) 
+prompt(MSG["thanks"])
